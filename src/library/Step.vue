@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="step-wrapper">
-      <p class="btn left" @click='onClickLeft'>a</p>
+      <p class="btn left" @click='onClickLeft'>-</p>
       <input type="number" :value="num" class="num-input">
-      <div class="btn right" @click='onClickRight'>b</div>
+      <div class="btn right" @click='onClickRight'>+</div>
     </div>
   </div>
 </template>
@@ -42,13 +42,12 @@
 }
   .btn {
     outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 34px;
-    line-height: 1em;
+   width: 28px;
+    height: 28px;
+    line-height: 25px;
+    font-size: 20px;
+    text-align: center;
     box-sizing: border-box;
-    padding: 0;
     color: $red;
     border: 1px solid $border3;
 

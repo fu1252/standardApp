@@ -91,7 +91,9 @@ export default {
   position: relative;
 }
 .btn{
+  align-items: center;
   color:$red;
+  display:flex;
   flex:1 0 20%;
 }
 .right{
