@@ -1,0 +1,58 @@
+@import './var.scss';
+
+checkbox {
+  width: 25px;
+  height:25px;
+}
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 20px;
+  height: 20px;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: $blue;
+  border:none;
+  outline: none;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border:none;
+  font-size: 14px;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+radio{
+  width: 19px;
+}
+
+radio .wx-radio-input{
+  border-radius: 50%; 
+  width: 14px;
+  height: 14px;
+  outline: none;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border:none;
+  outline: none;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;
+  width: 22px; 
+  height: 22px; 
+  line-height: 22px;
+  border:none;
+  text-align: center;
+  font-size: 13px;
+  color:#fff; 
+  background: #2facff;
+  border-color: #2facff;
+}
