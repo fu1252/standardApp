@@ -103,6 +103,7 @@ export default {
 }
 .icon{
   margin:0px 5px;
+  font-size: 14px;
 }
 .navbar{
   display:flex;

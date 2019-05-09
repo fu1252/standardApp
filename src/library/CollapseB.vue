@@ -3,7 +3,7 @@
   <!--------    手风琴版本：  ------->
 
   <div class="collapse">
-    <div class="title" @click='change'>
+    <div class="cell-title" @click='change'>
       {{propObj.title}}<i :class={top:propElemArr[id]} class="fa fa-angle-down" aria-hidden="true"></i>
     </div>
     <div class="content" :class={change:propElemArr[id]} :style={height:abc}>
@@ -120,7 +120,7 @@
     transform: rotate(-180deg);
     transition: all 1s ease-out;
   }
-  .title {
+  .cell-title {
     box-sizing: border-box;
     position: relative;
     display: flex;

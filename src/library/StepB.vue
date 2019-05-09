@@ -151,7 +151,7 @@ methods: {
 .line{
   position: absolute;
   top: 50%;
-  left: 7px;
+  left: 8px;
   width: 2px;
   height: 50%;
   background-color: brown;

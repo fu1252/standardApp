@@ -1,10 +1,16 @@
 <template>
   <div>
-
+      <h2 class="title">导航栏：</h2>
     <NavBar></NavBar>
+
+    <h2 class="title">滚动通告：</h2>
     <NoticeBar></NoticeBar>
+
+    <h2 class="title">通知：</h2>
     <Notify :show='isShowNotify' @close='onNotifyClick' text='所说的方式' color='red'></Notify>
     <Button mainBtn @click=onNotifyClick text='点开通知'></Button>
+
+    <h2 class="title">弹框：</h2>
     <Button @click='openPop' plainBtn>点开弹框</Button>
     <Pop :propShow='showPop' @close='closePop' position='bottom'>
       <div class="slot-wrapper">
@@ -17,13 +23,25 @@
         </div>
       </div>
     </Pop>
+
+    <h2 class="title">进度条：</h2>
     <Button color='red' plainBtn text='增加进度' @click='onProgress' fontSize='10px' padding='5px'></Button>
     <Progress :value='progressValue'></Progress>
+
+    <h2 class="title">评分：</h2>
     <Rate value=3.6></Rate>
     <RateA value=4.2></RateA>
+
+    <h2 class="title">步骤条：</h2>
     <Steps></Steps>
+
+    <h2 class="title">步进器：</h2>
     <Step></Step>
 
+    <h2 class="title">进度条：</h2>
+    <StepB></StepB>
+
+    <h2 class="title">单选多选框：</h2>
     <radio-group @change='onRadioChange'>
       <label v-for="(item, index) in radioList" :key="index">
         <radio :value='item'></radio>
@@ -37,21 +55,27 @@
       </label>
     </checkbox-group>
 
+    <h2 class="title">折叠面板：</h2>
     <div v-for="(item, index) in collapseList" :key="index">
       <Collapse :propObj='item' :propElemArr='elemArr' @propOnElemArr='onELemArr'></Collapse>
     </div>
-    <h1 :style="{color:'red'}">手风琴版本:</h1>
-    <CollapseA></CollapseA>
 
+    <h2 class="title">手风琴版：</h2>
+     <CollapseA></CollapseA>
+
+     <h2 class="title">徽章：</h2>
     <div class="badge-wrapper">
       <Badge></Badge>
       <Badge text='哈哈' number='43'></Badge>
       <Badge text='嘻嘻' number='23'></Badge>
     </div>
-    <Button plainBtn></Button>
+    
+    <h2 class="title">面板：</h2>
     <div class="card-wrapper" v-for="(item, index) in cardList" :key="index">
       <Card :propObj='item'></Card>
     </div>
+
+    <h2 class="title">单元格：</h2>
     <div v-for="(item, index) in cellList" :key="index">
       <CellA :propObj='item'></CellA>
     </div>
@@ -76,9 +100,10 @@
   import RateA from '@/library/RateA.vue';
   import Steps from '@/library/Steps.vue';
   import Step from '@/library/Step.vue';
+  import StepB from '@/library/StepB.vue';
 
   export default {
-    components: {Step,Steps,RateA,Rate,Progress, Pop, Notify, NoticeBar, Badge, Button, Card, CellA, Collapse, CollapseA, NavBar },
+    components: {StepB,Step,Steps,RateA,Rate,Progress, Pop, Notify, NoticeBar, Badge, Button, Card, CellA, Collapse, CollapseA, NavBar },
 
     data() {
       return {
@@ -132,6 +157,10 @@
 </script>
 
 <style scope lang="scss">
+  .title{
+    margin: 20px 10px 10px 10px;
+    color:rgb(195, 69, 253);
+  }
   .slot-wrapper {
     display: flex;
     flex-direction: column;

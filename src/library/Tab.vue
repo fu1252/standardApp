@@ -46,7 +46,7 @@
 <style lang='scss' scoped>
 
   .content{
-    height: 500px;
+    height: 50px;
     width: 100%;
     border-top: 1px solid #aaa;
     background-color: rgb(255, 255, 255);

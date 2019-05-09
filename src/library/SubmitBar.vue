@@ -1,13 +1,16 @@
 <template>
   <div class="submitbar-wrapper">
-    <div class="warning" v-if="isDisabled">你说分手士大夫撒电风扇，士大夫撒电风扇</div>
+    <div class="warning" v-if="isDisabled">请选择商品和规格</div>
     <div class="submitbar">
       <div class="check" :class={hidden:isChecked}>
-        <label for="checked"><checkbox :value='checkValue'></checkbox>全选</label>
+        <label for="checked">
+          <checkbox :value='checkValue'></checkbox>全选
+        </label>
       </div>
       <div class="submitbar-inner">
-        <div class="counter">合计: <span class="number">￥{{propCounter}}</span></div>
-        <div class="btn-wrapper" @click='$emit("handle",param)'> <button :class={disabled:isDisabled,btn:!isDisabled} :disabled='isDisabled'>
+        <div class="counter">合计: <span class="number">￥{{counter}}</span></div>
+        <div class="btn-wrapper" @click='$emit("handle",param)'>
+          <button :class={disabled:isDisabled,btn:!isDisabled} :disabled='isDisabled'>
             <i v-if="computedLoading" class="icon fa fa-fw fa-spinner fa-pulse"></i>
             <span v-else class="text">提交订单</span> </button>
         </div>
@@ -15,20 +18,20 @@
     </div>
   </div>
 </template>
-<script> 
-  export default {  
-    props:{
-      propCounter:{
-        type:Number,
-        default:50.89
+<script>
+  export default {
+    props: {
+      counter: {
+        type: Number,
+        default: 50.89
       }
     },
     data() {
       return {
-        isDisabled: false,
+        isDisabled:true,
         isLoading: false,
-        isChecked:false,
-        checkValue:true
+        isChecked: false,
+        checkValue: true
       }
     },
     computed: {
@@ -39,7 +42,7 @@
   }
 </script>
 <style lang='scss' scoped>
-  @import './styles/button';
+  @import './styles/var';
 
   button[disabled] {
     color: #fff !important;
@@ -78,14 +81,17 @@
     background-color: aquamarine;
     font-size: 14px;
   }
-.check{
-  display:flex;
-  align-items: center;
-  margin:0px 10px;
-}
-.check.hidden{
-  visibility: hidden;
-}
+
+  .check {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+  }
+
+  .check.hidden {
+    visibility: hidden;
+  }
+
   .submitbar-inner {
     display: flex;
     justify-content: flex-end;
@@ -110,8 +116,45 @@
     color: $red;
   }
 
+  .btn:active:before {
+    opacity: 0.1
+  }
+
+  .disabled.btn:active:before {
+    opacity: 0;
+  }
+
+  .btn:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border: inherit;
+    border-color: #000;
+    border-radius: inherit;
+    content: " ";
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+
   .btn {
-    @include mainBtn($red);
+    color: white;
+    background-color: $blue;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    line-height: 1;
+    font-weight: 500;
+    white-space: nowrap;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 4px;
     padding: 15px 20px;
     position: relative;
     width: auto;

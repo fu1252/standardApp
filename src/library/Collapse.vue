@@ -1,6 +1,6 @@
 <template>
   <div class="collapse">
-    <div class="title" @click='change'>
+    <div class="cell-title" @click='change'>
       {{propObj.title}}{{testStr}}<i :class={top:isChange} class="fa fa-angle-down" aria-hidden="true"></i>
     </div>
     <div class="content" :class={change:isChange} :style={height:abc}>
@@ -116,7 +116,7 @@
     transform: rotate(-180deg);
     transition: all 1s ease-out;
   }
-  .title {
+  .cell-title {
     box-sizing: border-box;
     position: relative;
     display: flex;

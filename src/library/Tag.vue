@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div class="tag">标签</div>
-    <div class="tag blue">士大夫撒</div>
-    <div class="tag red">标</div>
-    <div class="tag red">34343 电风扇</div>
+    <div class="tag" v-for="(item, index) in dataList" :key="index" :class='item.color'>
+      {{item.text}}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  
+  props:{
+    dataList:{
+      default:[{text:'地方'},{text:'的',color:'red'},{text:'王夫人',color:'blue'},{text:'递四方速递'},{text:'电风扇'}],
+      type:Array,
+    }
+  }
 }
 </script>
 
